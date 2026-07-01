@@ -1,0 +1,46 @@
+{"id": "g0-install", "query": "Cài đặt FiinQuantX thế nào? pip install bị lỗi import", "expected_group": "0", "expected_reference": "0-installation-introduction.md", "was_f1_zero": false}
+{"id": "g0-login", "query": "How do I login to FiinSession?", "expected_group": "0", "expected_reference": "0-installation-introduction.md", "was_f1_zero": false}
+{"id": "g1-index", "query": "Lấy danh sách mã trong rổ VN30", "expected_group": "1.1", "expected_reference": "1.1-ticker-list-by-index.md", "was_f1_zero": false}
+{"id": "g1-sector", "query": "Danh sách cổ phiếu ngành ngân hàng theo ICB", "expected_group": "1.2", "expected_reference": "1.2-ticker-list-by-sector.md", "was_f1_zero": false}
+{"id": "g1-foreignroom", "query": "Room ngoại còn lại của HPG là bao nhiêu?", "expected_group": "1.5", "expected_reference": "1.5-foreign-room.md", "was_f1_zero": false}
+{"id": "g2-historical", "query": "Lấy dữ liệu lịch sử OHLCV của VNM timeframe 1D từ 2024-01-01 đến 2024-06-01", "expected_group": "2.2", "expected_reference": "2.2-historical-data.md", "was_f1_zero": false}
+{"id": "g2-realtime", "query": "Stream giá realtime qua websocket cho FPT", "expected_group": "2.1", "expected_reference": "2.1-realtime-data.md", "was_f1_zero": false}
+{"id": "g2-orderbook", "query": "Lấy sổ lệnh bid ask của SSI", "expected_group": "2.4", "expected_reference": "2.4-orderbook-data.md", "was_f1_zero": false}
+{"id": "g3-statement", "query": "Lấy báo cáo kết quả kinh doanh (KQKD) của VNM quý gần nhất", "expected_group": "3.1", "expected_reference": "3.1-financial-statements.md", "was_f1_zero": false}
+{"id": "g3-ratios", "query": "Tính ROE, ROA, EPS của HPG", "expected_group": "3.2", "expected_reference": "3.2-financial-ratios.md", "was_f1_zero": false}
+{"id": "g3-stockval", "query": "Lấy P/E và P/B của mã VNM theo thời gian", "expected_group": "3.3", "expected_reference": "3.3-stock-valuation-pe-pb.md", "was_f1_zero": false}
+{"id": "g3-indexval", "query": "Lấy P/E, P/B của chỉ số VN30 và VNINDEX", "expected_group": "3.4", "expected_reference": "3.4-index-valuation-pe-pb.md", "was_f1_zero": true}
+{"id": "g4-breadth", "query": "Độ rộng thị trường hôm nay: số mã tăng giảm, mã trần sàn", "expected_group": "4.1", "expected_reference": "4.1-market-breadth.md", "was_f1_zero": false}
+{"id": "g4-seasonality", "query": "Phân tích seasonality giá VNM theo tháng", "expected_group": "4.3", "expected_reference": "4.3-seasonality-price.md", "was_f1_zero": false}
+{"id": "g5-rebalance", "query": "Rebalance lại danh mục VN30 theo tỷ trọng vốn hóa", "expected_group": "5.1", "expected_reference": "5.1-rebalance.md", "was_f1_zero": true}
+{"id": "g5-optimize", "query": "Tối ưu danh mục theo Markowitz, vẽ efficient frontier, phân bổ vốn", "expected_group": "5.1", "expected_reference": "5.1-rebalance.md", "was_f1_zero": true}
+{"id": "g5-rrg", "query": "Vẽ biểu đồ RRG relative rotation cho nhóm ngành", "expected_group": "5.2", "expected_reference": "5.2-rrg-relative-rotation.md", "was_f1_zero": false}
+{"id": "g6-login", "query": "Đăng nhập đặt lệnh qua DNSE bằng FiinQuantConnector", "expected_group": "6.1", "expected_reference": "6.1-login.md", "was_f1_zero": false}
+{"id": "g6-order", "query": "Đặt lệnh mua 1000 cổ VNM giá 65000 lệnh LO", "expected_group": "6.7", "expected_reference": "6.7-place-order.md", "was_f1_zero": false}
+{"id": "g6-position", "query": "Xem vị thế cổ phiếu đang nắm giữ", "expected_group": "6.9", "expected_reference": "6.9-get-position.md", "was_f1_zero": false}
+{"id": "g7-trend", "query": "Tính đường trung bình SMA 20 và EMA 50 cho HPG", "expected_group": "7.1", "expected_reference": "7.1-trend-indicators.md", "was_f1_zero": false}
+{"id": "g7-momentum", "query": "Tính RSI 14 và MACD cho VNM", "expected_group": "7.2", "expected_reference": "7.2-momentum-indicators.md", "was_f1_zero": false}
+{"id": "g7-volatility", "query": "Vẽ Bollinger Bands và tính ATR cho FPT", "expected_group": "7.3", "expected_reference": "7.3-volatility-indicators.md", "was_f1_zero": true}
+{"id": "g7-volatility2", "query": "Dải biến động Keltner Channel của SSI", "expected_group": "7.3", "expected_reference": "7.3-volatility-indicators.md", "was_f1_zero": true}
+{"id": "g7-smc", "query": "Xác định Order Block và Fair Value Gap (FVG) theo Smart Money Concepts", "expected_group": "7.5", "expected_reference": "7.5-smart-money-concepts.md", "was_f1_zero": false}
+{"id": "g7-pricelevel-fibo", "query": "Kéo fibonacci thoái lui và tìm mức fibo hỗ trợ cho VNM", "expected_group": "7.8", "expected_reference": "7.8-price-level-indicators.md", "was_f1_zero": true}
+{"id": "g7-pricelevel-trendline", "query": "Vẽ trendline và kênh giá, xác định hỗ trợ kháng cự cho HPG", "expected_group": "7.8", "expected_reference": "7.8-price-level-indicators.md", "was_f1_zero": true}
+{"id": "g8-pattern-cup", "query": "Nhận diện mô hình Cốc tay cầm trên biểu đồ FPT", "expected_group": "8.1", "expected_reference": "8.1-chart-patterns.md", "was_f1_zero": true}
+{"id": "g8-pattern-hns", "query": "Tìm mô hình Vai đầu vai (head and shoulders) và candlestick đảo chiều", "expected_group": "8.1", "expected_reference": "8.1-chart-patterns.md", "was_f1_zero": true}
+{"id": "g9-screen", "query": "Lọc cổ phiếu có PE < 10 và ROE > 15%", "expected_group": "9", "expected_reference": "9-stock-screening.md", "was_f1_zero": false}
+{"id": "g9-screen2", "query": "Stock screener: tìm CP vốn hóa lớn, thanh khoản cao", "expected_group": "9", "expected_reference": "9-stock-screening.md", "was_f1_zero": false}
+{"id": "n-amb-vnm", "query": "xem VNM", "expected_group": "ASK", "expected_reference": "ASK", "type": "clarify", "noise": true, "was_f1_zero": false}
+{"id": "n-amb-analyze", "query": "phân tích giúp tôi với", "expected_group": "ASK", "expected_reference": "ASK", "type": "clarify", "noise": true, "was_f1_zero": false}
+{"id": "n-amb-data", "query": "cho tôi data cổ phiếu", "expected_group": "ASK", "expected_reference": "ASK", "type": "clarify", "noise": true, "was_f1_zero": false}
+{"id": "n-amb-price", "query": "giá VNM", "expected_group": "2", "expected_reference": "2.1-realtime-data.md", "accept": ["ASK"], "type": "clarify", "noise": true, "was_f1_zero": false}
+{"id": "n-abbr-cp-roe", "query": "CP nào ROE > 20%?", "expected_group": "9", "expected_reference": "9-stock-screening.md", "type": "abbrev", "noise": true, "was_f1_zero": false}
+{"id": "n-abbr-kqkd", "query": "KQKD HPG quý 2 ra sao", "expected_group": "3.1", "expected_reference": "3.1-financial-statements.md", "type": "abbrev", "noise": true, "was_f1_zero": false}
+{"id": "n-abbr-bb", "query": "vẽ BB cho FPT", "expected_group": "7.3", "expected_reference": "7.3-volatility-indicators.md", "type": "abbrev", "noise": true, "was_f1_zero": false}
+{"id": "n-abbr-mfi", "query": "MFI của VNM tuần này", "expected_group": "7.7", "expected_reference": "7.7-money-flow-indicators.md", "type": "abbrev", "noise": true, "was_f1_zero": false}
+{"id": "n-abbr-cdkt", "query": "CĐKT của VCB năm 2024", "expected_group": "3.1", "expected_reference": "3.1-financial-statements.md", "type": "abbrev", "noise": true, "was_f1_zero": false}
+{"id": "n-multi-screen-bt", "query": "lọc top 10 theo ROE rồi backtest MA crossover", "expected_group": "9", "expected_reference": "9-stock-screening.md", "accept": ["2.2-historical-data.md", "7.1-trend-indicators.md"], "type": "multi", "noise": true, "was_f1_zero": false}
+{"id": "n-multi-realtime-rsi", "query": "theo dõi realtime VNM, khi RSI < 30 thì đặt lệnh mua", "expected_group": "2.1", "expected_reference": "2.1-realtime-data.md", "accept": ["7.2-momentum-indicators.md", "6.7-place-order.md"], "type": "multi", "noise": true, "was_f1_zero": false}
+{"id": "n-multi-full", "query": "phân tích toàn diện VNM: BCTC, chỉ số, giá lịch sử, chỉ báo kỹ thuật", "expected_group": "3.1", "expected_reference": "3.1-financial-statements.md", "accept": ["3.2-financial-ratios.md", "2.2-historical-data.md", "7.1-trend-indicators.md", "7.2-momentum-indicators.md"], "type": "multi", "noise": true, "was_f1_zero": false}
+{"id": "n-trap-dema", "query": "tính DEMA 20 cho VNM", "expected_group": "7.1", "expected_reference": "7.1-trend-indicators.md", "type": "trap", "noise": true, "was_f1_zero": false}
+{"id": "n-trap-doublebottom", "query": "mã nào đang tạo mô hình hai đáy?", "expected_group": "8.1", "expected_reference": "8.1-chart-patterns.md", "type": "trap", "noise": true, "was_f1_zero": false}
+{"id": "n-trap-markowitz", "query": "phân bổ vốn tối ưu theo Markowitz cho 5 mã", "expected_group": "5.1", "expected_reference": "5.1-rebalance.md", "type": "trap", "noise": true, "was_f1_zero": false}

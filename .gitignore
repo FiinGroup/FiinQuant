@@ -1,0 +1,12 @@
+dist/
+__pycache__/
+*.pyc
+.DS_Store
+evals/predictions.json
+*.env
+*.env.*
+.env
+secrets/
+*.secret
+*trading_token*.json
+*token*.json
