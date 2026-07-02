@@ -1,11 +1,11 @@
 # FiinQuant Skill Package
 
 FiinQuant Skill Package cung cấp bộ hướng dẫn kỹ thuật và tài liệu tham chiếu
-cho các workflow sử dụng **FiinQuantX** trên thị trường chứng khoán Việt Nam
+cho các workflow sử dụng **FiinQuant** trên thị trường chứng khoán Việt Nam
 (HOSE, HNX, UPCOM).
 
 Package tập trung vào việc chuẩn hóa cách gọi hàm, tham số, dữ liệu trả về và
-các tình huống triển khai thường gặp khi làm việc với FiinQuantX. Nội dung được
+các tình huống triển khai thường gặp khi làm việc với FiinQuant. Nội dung được
 tổ chức theo cơ chế progressive disclosure: file `SKILL.md` đóng vai trò điều
 phối, còn chi tiết từng nhóm chức năng nằm trong thư mục `references/`.
 
@@ -20,19 +20,19 @@ phối, còn chi tiết từng nhóm chức năng nằm trong thư mục `refere
 - Giao dịch: đăng nhập, tài khoản, sức mua/bán, đặt/sửa/hủy lệnh và vị thế.
 - Phân tích kỹ thuật: trend, momentum, volatility, volume, money flow,
   support/resistance, Fibonacci và chart pattern.
-- Stock screening theo bộ lọc dữ liệu FiinQuantX.
+- Stock screening theo bộ lọc dữ liệu FiinQuant.
 
-## Phiên bản FiinQuantX
+## Phiên bản FiinQuant
 
-Bộ reference được rà theo FiinQuantX bản mới nhất tại thời điểm kiểm chứng gần
+Bộ reference được rà theo FiinQuant bản mới nhất tại thời điểm kiểm chứng gần
 nhất: **2026-06-08**.
 
-Repo không pin version FiinQuantX. Khi triển khai, cài hoặc cập nhật package từ
+Repo không pin version FiinQuant. Khi triển khai, cài hoặc cập nhật package từ
 index chính thức:
 
 ```bash
-pip install --extra-index-url https://fiinquant.github.io/fiinquantx/simple fiinquantx
-pip install --upgrade --extra-index-url https://fiinquant.github.io/fiinquantx/simple fiinquantx
+pip install --extra-index-url https://fiinquant.github.io/FiinQuant/simple FiinQuant
+pip install --upgrade --extra-index-url https://fiinquant.github.io/FiinQuant/simple FiinQuant
 ```
 
 Lưu ý realtime: nếu `signalrcore` >= 1.0.0 gây lỗi tương thích, dùng bản 0.9.x
@@ -131,7 +131,7 @@ python3 evals/run_eval.py
 - Bộ test route phủ đủ 10/10 nhóm hàm.
 - Tất cả reference trong test phải tồn tại.
 - Không có secret, token, password hoặc file phiên giao dịch trong repo.
-- Khi FiinQuantX thay đổi API, cần rà lại reference và chạy lại bộ test.
+- Khi FiinQuant thay đổi API, cần rà lại reference và chạy lại bộ test.
 
 ## Bảo mật
 
