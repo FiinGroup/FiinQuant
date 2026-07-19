@@ -106,4 +106,13 @@ client = FiinSession(
 
 Khi đăng nhập không thành công, các lệnh gọi dữ liệu sau đó có thể báo lỗi phía thư viện, ví dụ: `NameError: Please login before calling data`.
 
+### Quản lý thông tin đăng nhập và phiên làm việc
+
+- Không ghi tên đăng nhập hoặc mật khẩu trực tiếp vào mã nguồn được chia sẻ. Nên đọc thông tin xác thực từ biến môi trường hoặc hệ thống quản lý bí mật.
+- Đăng nhập một lần và tái sử dụng `client` trong vòng đời tiến trình hoặc worker. Không đăng nhập lại khi đổi mã, đổi khung thời gian hoặc thực hiện từng yêu cầu dữ liệu lịch sử.
+- Với ứng dụng web hoặc mobile, chỉ backend hoặc sidecar được đăng nhập FiinQuantX. Không gửi thông tin xác thực xuống trình duyệt hay nhúng thông tin này trong JavaScript.
+- Với hệ thống nhiều worker hoặc nhiều replica, cần quản lý tổng số luồng realtime của toàn hệ thống theo hạn mức tài khoản.
+
+Xem thêm [Quản lý kết nối và tối ưu hiệu năng](2.6-connection-lifecycle-performance.md) để phân biệt historical request, realtime stream và cách tổ chức kết nối cho ứng dụng chạy dài hạn.
+
 ---

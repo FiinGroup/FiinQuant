@@ -79,6 +79,7 @@ description: >-
 | `kết hợp lịch sử và realtime`, `merge data`, `ghép dữ liệu`, `nối realtime` | **2.3. Nối dữ liệu Realtime và lịch sử** | `references/2.3-merge-realtime-historical.md` |
 | `sổ lệnh`, `orderbook`, `bid ask`, `bước giá`, `khối lượng chờ` | **2.4. Hàm dữ liệu sổ lệnh** | `references/2.4-orderbook-data.md` |
 | `theo dõi hủy lệnh`, `lệnh bị hủy`, `cancel tracking` | **2.5. Hàm theo dõi huỷ lệnh** | `references/2.5-cancel-order-tracking.md` |
+| `quản lý kết nối`, `connection lifecycle`, `reconnect`, `quota websocket`, `tối ưu tốc độ`, `cache`, `sidecar`, `nhiều mã realtime` | **2.6. Quản lý kết nối và tối ưu hiệu năng** | `references/2.6-connection-lifecycle-performance.md` |
 | `tick data`, `tick by tick`, `từng tick`, `lịch sử khớp lệnh` | **2.2. Hàm dữ liệu Lịch sử** (timeframe tick) | `references/2.2-historical-data.md` |
 
 > [!IMPORTANT]

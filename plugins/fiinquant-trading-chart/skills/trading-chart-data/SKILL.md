@@ -23,6 +23,8 @@ This skill provides step-by-step instructions and architectural patterns to impl
   - Fetch historical OHLCV (Open, High, Low, Close, Volume) data up to the `latest` available timestamp.
 - **Implementation**:
   - When the user selects a symbol and timeframe, call the backend API to fetch historical bars.
+  - For the first render, request only the latest page required by the viewport, typically 300-500 bars. Load older pages when the user scrolls back or selects a wider date range.
+  - Deduplicate identical in-flight requests and discard stale responses after the user switches symbol or timeframe.
   - Draw these bars on the charting library (e.g., Lightweight Charts, D3, or TradingView Lightweight).
   - **Market Hours Check**: If the market is **CLOSED**, this initial data load represents the final state of the chart. Stop here and do not subscribe to real-time data.
   - If the market is **OPEN**, the final bar in this initial historical fetch represents the *current, incomplete* period. It serves as the baseline for real-time updates.
@@ -34,6 +36,12 @@ This skill provides step-by-step instructions and architectural patterns to impl
 **Objective**: Make the current, active candle jump/update continuously representing real-time market activity.
 - **Source**: Subscribe to real-time tick-by-tick data streams via `2.1. Hàm dữ liệu Realtime` function/API, please review the skill `fiinquant/SKILL.md` to use this function. **Condition:** Only connect and subscribe if the market is currently **OPEN**.
 - **Lưu ý Quan trọng về Python Websocket Callback:** Hàm đẩy data vào Asyncio Websocket Queue phải chú ý lấy đúng event_loop (`asyncio.run_coroutine_threadsafe(..., loop)`) vì Callback `on_tick` chạy trên background thread. Ngoài ra, TUYỆT ĐỐI phải lấy Dict thông qua `data.to_dataFrame().iloc[0].to_dict()` thay vì `getattr()`.
+- **Shared Stream Architecture**:
+  - The backend or sidecar owns the authenticated `FiinSession` and realtime stream. Browser code must not contain FiinQuant credentials.
+  - Maintain one upstream realtime stream for the union of symbols used by charts, watchlists, alerts, and other active features.
+  - Multiplex ticks from that stream to frontend clients through the application's WebSocket layer.
+  - Do not create or reconnect an upstream stream when the selected symbol is already in the active subscription set.
+  - Debounce subscription changes. If the SDK cannot update tickers on a running stream, stop the old stream completely before starting the replacement.
 - **Implementation**:
   - Each incoming tick contains at least `Close`, `MatchVolume`, and `TradingDate`.
   - Locate the **current active candle** (the last one drawn from historical data).
@@ -73,7 +81,7 @@ This skill provides step-by-step instructions and architectural patterns to impl
     2. Frontend immediately checks IndexedDB and renders cached historical data (yielding a 0ms display).
     3. Frontend asynchronously hits the backend caching layer to fetch any missed delta updates since the last cache timestamp.
     4. Backend serves this delta instantly.
-    5. Frontend patches the chart and connects to WebSocket for the new symbol's ticks to resume real-time flickering.
+    5. Frontend patches the chart and registers the symbol with the shared subscription registry. It reuses the existing application WebSocket instead of opening a connection per symbol.
 
 ## Key Rules for triển khai
 - **Rule 1**: Understand that `historicalBars` (array) and `currentLiveBar` (object/pointer) are two distinct entities. Design your state management to handle them clearly.
@@ -81,3 +89,5 @@ This skill provides step-by-step instructions and architectural patterns to impl
 - **Rule 3**: Correctly implement the time-boundary synthesis algorithm. If the user stays on the chart for an hour, it must smoothly print 60 new 1-minute candles using purely incoming ticks.
 - **Rule 4**: Aggressive Caching. Implement both backend local storage caching for all symbols and frontend IndexedDB caching to enable instantaneous, lag-free chart jumping between symbols.
 - **Rule 5**: Market Hours Awareness. Do not initiate WebSocket connections, polling, or real-time tick processing outside of active trading hours. Simply load the `latest` historical snapshot representing the closure of the previous session and keep the chart static.
+- **Rule 6**: Shared Connection Ownership. Charts, watchlists, and alerts must not create independent upstream realtime streams. Use a shared session, subscription registry, and stream managed by the backend or sidecar.
+- **Rule 7**: Follow `fiinquant/references/2.6-connection-lifecycle-performance.md` for session reuse, historical request limits, realtime cleanup, reconnect, and operational monitoring.
