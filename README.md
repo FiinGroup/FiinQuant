@@ -13,7 +13,7 @@ phối, còn chi tiết từng nhóm chức năng nằm trong thư mục `refere
 
 - Dữ liệu danh mục: mã chứng khoán, rổ chỉ số, ngành, vốn hóa, room ngoại,
   free-float và giá trần/sàn.
-- Dữ liệu giao dịch: realtime, lịch sử, OHLCV, order book và dữ liệu tick.
+- Dữ liệu giao dịch: realtime, lịch sử, OHLCV, order book, dữ liệu tick và quản lý vòng đời kết nối.
 - Phân tích cơ bản: báo cáo tài chính, chỉ số tài chính, P/E, P/B và định giá.
 - Thống kê thị trường: độ rộng thị trường và seasonality.
 - Công cụ danh mục: rebalance, RRG và portfolio workflow.
